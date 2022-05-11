@@ -1,0 +1,85 @@
+\begin{tcolorbox}[sharp corners, colback=white,boxrule=1mm]
+	\section{Definição}
+	\subsection{Dependência funcional}
+	Representação: $\alpha \to \beta$
+	
+	Condição: Para todo $t_1$ e $t_2$:
+	
+	\[t_1[\alpha] = t_2[\alpha] \to t_1[\beta] = t_1[\beta]\]
+	
+	\subsubsection{Dependência funcional trivial}
+	
+	A dependência funcional $\alpha \to \beta$ é trivial se $\beta \subseteq \alpha$
+	
+	\subsection{Dependência de valores múltiplos}
+	Representação: $\alpha \to\to \beta$
+	
+	Condição: Para todos os pares $t_1$ e $t_2$, tais que $t_1[\alpha] = t_2[\alpha]$ existem tuplas $t_3$ e $t_4$ em $r$ tais que:
+	
+	\begin{gather*}
+		t_1[\alpha] = t_2[\alpha] = t_3[\alpha] = t_4[\alpha]\\
+		t_3[\beta] = t_1[\beta]\\
+		t_3[R - \beta] = t_2[R-\beta]\\
+		t_4[\beta] = t_2[\beta]\\
+		t_4[R - \beta] = t_1[R-\beta]
+	\end{gather*}
+
+	\subsection{Parcialmente dependente}
+	$\alpha \to \beta$ é parcial se:
+	\[\exists \gamma: \gamma \subset \alpha \wedge \gamma \to \beta\]
+	
+	Dessa forma, $\beta$ é parcialmente dependente de $\alpha$
+	
+	\subsection{Transitivamente dependente}
+	Um atributo $A$ é transitivamente dependente de $\alpha$ se existe um conjunto de atributos $\beta$ tais que:
+	\begin{gather*}
+		\alpha \to \beta\\
+		\neg(\beta \to \alpha)\\
+		A \not\in \alpha\\
+		A \not\in \beta\\
+		\beta \to A
+	\end{gather*}
+\end{tcolorbox}
+
+\newpage
+\begin{tcolorbox}[sharp corners, colback=white,boxrule=1mm]
+	\section{Formas normais}
+	\subsection{Primeira forma}
+	Definições alternativas:
+	\begin{itemize}
+		\item Nenhum atributo possui estrutura
+		\item Todos os atributos são atômicos
+	\end{itemize}
+	
+	\subsection{Segunda forma}
+	Para cada atributo $A$, ele é primo, ou não está parcialmente dependente de uma chave candidata
+	
+	\subsection{Terceira forma}
+	\subsubsection{Através de dependências funcionais}
+	Para cada esquema de relação $R$, para cada dependência funcional $\alpha \to \beta$ em $F^+$, pelo menos uma dessas sentenças é verdadeira:
+	
+	\begin{itemize}
+		\item $\alpha \to \beta$ é trivial 
+		\item $\alpha \to R$ ($\alpha$ é superchave)
+		\item Cada atributo $\beta - \alpha$ é primo
+	\end{itemize}
+	
+	\subsubsection{Através de dependências transitiva}
+	Nenhum atributo não primo é transitivamente dependente.
+	
+	\subsection{Forma normal Boyce-Codd}
+	Para todas as dependência funcional em $F+$, pelo menos um desses é verdadeiro:
+	
+	\begin{itemize}
+		\item é trivial
+		\item $\alpha \to R$
+	\end{itemize}
+	obs.: decomposição em FNBC não preserva dependência funcional
+	
+	\subsection{Quarta forma normal}
+	Para toda dependência $\alpha\to\to\beta$, um deles se aplica:
+	\begin{itemize}
+		\item é trivial
+		\item $\alpha \to R$
+	\end{itemize} 
+\end{tcolorbox}
