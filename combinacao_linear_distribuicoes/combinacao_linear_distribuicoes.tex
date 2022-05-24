@@ -1,0 +1,15 @@
+\begin{tcolorbox}[sharp corners, colback=white,boxrule=1mm]
+\section{Distribuição de uma combinação linear}
+\subsection{Definição}
+Dada uma coleção de $n$ variáveis aleatórias \(X_1, \cdots, X_n\) e $n$ constantes numéricas $a_1, \cdots, a_n$, a variável aleatória:
+\[Y = \sum_{i=1}^{n} a_iX_i\]
+é chamada de combinação linear dos $X_i$
+\subsection{Média}
+\[E\left ( \sum_{i=1}^n a_iX_i \right ) = \sum_{i=1}^n \left ( a_iX_i \right )\]
+
+\subsection{Variância}
+\[V\left ( \sum_{i=1}^n a_iX_i \right ) = \sum_{i=1}^n\sum_{j=1}^n \displaystyle{Cov}(X_i, X_j)\]
+
+Caso especial se as variáveis são independentes:
+\[V\left ( \sum_{i=1}^n a_iX_i \right ) = \sum_{i=1}^n \left ( a^2_i \sigma_i^2 \right )\]
+\end{tcolorbox}
